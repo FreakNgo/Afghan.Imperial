@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afghan Imperial Restaurant — Alum Rock Road, Birmingham</title>
+<meta name="description" content="Afghan Imperial Restaurant serves traditional Afghan cooking — kabuli palaw, mantu, chapli kabab and more — on Alum Rock Road, Birmingham. Family-run. Call to reserve a table.">
+<meta name="theme-color" content="#1C1310">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231C1310'/%3E%3Cpath d='M20 78 L20 42 Q20 18 50 12 Q80 18 80 42 L80 78' fill='none' stroke='%23C7A24E' stroke-width='6'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Afghan Imperial Restaurant",
+  "servesCuisine": "Afghan",
+  "priceRange": "££",
+  "telephone": "+447498603264",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "203 Alum Rock Road",
+    "addressLocality": "Alum Rock, Birmingham",
+    "postalCode": "B8 1EU",
+    "addressCountry": "GB"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --ink:#1C1310;
+    --ink-soft:#241A15;
+    --pomegranate:#7E2231;
+    --pomegranate-light:#9C3245;
+    --juniper:#0F3129;
+    --juniper-light:#153E34;
+    --brass:#C7A24E;
+    --brass-soft:#DCC27F;
+    --parchment:#F3EAD9;
+    --parchment-dim:#E6D9BE;
+    --ink-text:#2B211B;
+    --font-display:'Marcellus', Georgia, serif;
+    --font-body:'Jost', -apple-system, sans-serif;
+    --section-pad: clamp(4.5rem, 9vw, 7.5rem);
+    --edge: clamp(1.5rem, 6vw, 5rem);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink-text);
+    background:var(--parchment);
+    -webkit-font-smoothing:antialiased;
+    font-size:16px;
+    line-height:1.65;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:400;margin:0;color:inherit;}
+  p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font:inherit;background:none;border:0;color:inherit;cursor:pointer;}
+
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+
+  .skip-link{
+    position:absolute;left:-999px;top:0;background:var(--brass);color:var(--ink);
+    padding:.75rem 1.25rem;z-index:999;
+  }
+  .skip-link:focus{left:1rem;top:1rem;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding-left:var(--edge);padding-right:var(--edge);}
+
+  /* ---------- NAV ---------- */
+  .site-nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.35rem var(--edge);
+    background:transparent;
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  .site-nav.scrolled{
+    background:rgba(28,19,16,.94);
+    padding:.85rem var(--edge);
+    box-shadow:0 6px 24px rgba(0,0,0,.25);
+    backdrop-filter:blur(6px);
+  }
+  .brand{
+    font-family:var(--font-display);
+    font-size:1.3rem;
+    letter-spacing:.03em;
+    color:var(--parchment);
+  }
+  .brand span{color:var(--brass);}
+  .nav-links{display:flex;align-items:center;gap:2.1rem;}
+  .nav-links a{
+    color:var(--parchment-dim);
+    font-size:.97rem;
+    position:relative;
+    padding:.3rem 0;
+  }
+  .nav-links a:not(.nav-cta)::after{
+    content:'';position:absolute;left:0;bottom:0;width:100%;height:1px;
+    background:var(--brass);transform:scaleX(0);transform-origin:right;
+    transition:transform .35s ease;
+  }
+  .nav-links a:not(.nav-cta):hover::after,
+  .nav-links a:not(.nav-cta):focus-visible::after{transform:scaleX(1);transform-origin:left;}
+  .nav-cta{
+    border:1px solid var(--brass);
+    padding:.55rem 1.2rem;
+    color:var(--brass-soft)!important;
+    transition:background .3s ease, color .3s ease;
+  }
+  .nav-cta:hover{background:var(--brass);color:var(--ink)!important;}
+
+  .nav-toggle{display:none;flex-direction:column;gap:5px;width:28px;z-index:110;}
+  .nav-toggle span{display:block;height:1.5px;background:var(--parchment);transition:transform .3s ease, opacity .3s ease;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 28%, rgba(126,34,49,.35), transparent 70%),
+      var(--ink);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:8rem var(--edge) 4rem;
+    overflow:hidden;
+  }
+  .hero-arch{width:min(280px, 60vw);margin:0 auto 1.6rem;}
+  .hero-arch path,.hero-arch line{
+    fill:none;stroke:var(--brass);stroke-width:1.6;stroke-linecap:round;
+  }
+  .hero-arch .ornament{
+    fill:var(--brass);stroke:none;
+    opacity:0;
+    transform-box:fill-box;transform-origin:center;
+    transform:rotate(45deg) scale(.3);
+  }
+  .hero-arch .ornament.show{
+    opacity:1;transform:rotate(45deg) scale(1);
+    transition:opacity .6s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+  }
+
+  .hero-content{opacity:0;transform:translateY(14px);transition:opacity .9s ease, transform .9s ease;}
+  .hero-content.show{opacity:1;transform:translateY(0);}
+
+  .hero-eyebrow-loc{
+    color:var(--brass-soft);
+    font-size:.85rem;
+    letter-spacing:.04em;
+    margin-bottom:.9rem;
+  }
+  .hero h1{
+    color:var(--parchment);
+    font-size:clamp(2.7rem, 7vw, 5.2rem);
+    line-height:1.03;
+    letter-spacing:.005em;
+  }
+  .hero-tagline{
+    margin:1.4rem auto 0;
+    max-width:36ch;
+    color:var(--parchment-dim);
+    font-size:clamp(1.05rem,2vw,1.25rem);
+    font-weight:300;
+  }
+  .hero-ctas{
+    margin-top:2.6rem;
+    display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+  }
+  .btn{
+    position:relative;overflow:hidden;
+    padding:1rem 1.9rem;
+    font-size:.95rem;
+    letter-spacing:.02em;
+    border:1px solid var(--brass);
+    z-index:1;
+  }
+  .btn::before{
+    content:'';position:absolute;inset:0;background:var(--brass);
+    transform:scaleX(0);transform-origin:left;transition:transform .4s ease;z-index:-1;
+  }
+  .btn:hover::before,.btn:focus-visible::before{transform:scaleX(1);}
+  .btn-primary{color:var(--ink);background:var(--brass);}
+  .btn-primary::before{background:var(--parchment);}
+  .btn-primary:hover{color:var(--ink);}
+  .btn-outline{color:var(--brass-soft);}
+  .btn-outline:hover,.btn-outline:focus-visible{color:var(--ink);}
+
+  .hero-foot{
+    margin-top:3.2rem;color:var(--parchment-dim);font-size:.9rem;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section{padding:var(--section-pad) var(--edge);}
+  .section-inner{max-width:1180px;margin:0 auto;}
+  .kicker-line{
+    display:inline-block;width:46px;height:1px;background:var(--pomegranate);margin-bottom:1.4rem;
+  }
+  .juniper .kicker-line{background:var(--brass);}
+
+  /* ---------- HERITAGE ---------- */
+  .heritage{background:var(--parchment);}
+  .heritage-grid{
+    display:grid;grid-template-columns:1.1fr .8fr;gap:5vw;align-items:center;
+  }
+  .heritage h2{font-size:clamp(2rem,4vw,2.9rem);max-width:14ch;line-height:1.12;color:var(--ink);}
+  .heritage p{margin-top:1.4rem;max-width:56ch;color:var(--ink-text);font-size:1.05rem;}
+  .heritage p + p{margin-top:1.1rem;}
+  .heritage-facts{
+    margin-top:2.2rem;display:flex;gap:2.4rem;flex-wrap:wrap;
+  }
+  .heritage-facts div{border-top:1px solid var(--brass);padding-top:.6rem;font-size:.95rem;color:var(--ink-text);}
+  .heritage-art{justify-self:center;}
+  .heritage-art svg{width:100%;max-width:300px;}
+  .heritage-art path,.heritage-art line{fill:none;stroke:var(--pomegranate);stroke-width:1.4;}
+  .heritage-art .diamond{fill:var(--brass);stroke:none;}
+
+  /* ---------- MENU ---------- */
+  .menu{background:var(--juniper);color:var(--parchment);}
+  .menu-head{max-width:60ch;margin-bottom:3.5rem;}
+  .menu-head h2{color:var(--parchment);font-size:clamp(2rem,4vw,2.9rem);}
+  .menu-head p{margin-top:1rem;color:var(--parchment-dim);font-size:1.05rem;}
+
+  .signature{
+    border:1px solid var(--brass);
+    padding:clamp(1.8rem,4vw,3rem);
+    display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem 2rem;
+    align-items:baseline;
+    margin-bottom:4rem;
+  }
+  .signature-label{
+    grid-column:1/-1;grid-row:1;color:var(--brass);font-size:.85rem;letter-spacing:.04em;
+    padding-bottom:.6rem;border-bottom:1px solid rgba(199,162,78,.3);margin-bottom:.4rem;
+  }
+  .signature h3{grid-column:1;grid-row:2;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--parchment);}
+  .signature p{grid-column:1/-1;grid-row:3;color:var(--parchment-dim);font-size:1rem;max-width:46ch;}
+  .signature .price{grid-column:3;grid-row:2;justify-self:end;font-family:var(--font-display);font-size:1.5rem;color:var(--brass-soft);}
+
+  .menu-columns{
+    display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+  }
+  .menu-group + .menu-group{margin-top:3rem;}
+  .menu-group h3{
+    color:var(--brass);font-size:1.15rem;letter-spacing:.03em;
+    padding-bottom:.7rem;margin-bottom:1.3rem;border-bottom:1px solid rgba(199,162,78,.35);
+  }
+  .dish{margin-bottom:1.4rem;}
+  .dish-row{display:flex;align-items:baseline;gap:.5rem;}
+  .dish-name{white-space:nowrap;font-size:1.05rem;color:var(--parchment);}
+  .dish-leader{flex:1;border-bottom:1px dotted rgba(243,234,217,.3);transform:translateY(-5px);}
+  .dish-price{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--brass-soft);}
+  .dish-desc{margin-top:.35rem;font-size:.9rem;color:var(--parchment-dim);max-width:46ch;}
+
+  .menu-note{margin-top:3rem;font-size:.85rem;color:var(--parchment-dim);opacity:.75;}
+
+  /* ---------- VISIT ---------- */
+  .visit{background:var(--parchment);}
+  .visit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5vw;align-items:start;}
+  .visit h2{font-size:clamp(2rem,4vw,2.9rem);color:var(--ink);max-width:12ch;}
+  .visit-block{margin-top:2.2rem;}
+  .visit-block h4{
+    font-family:var(--font-body);font-weight:600;font-size:.8rem;
+    letter-spacing:.03em;color:var(--pomegranate);margin-bottom:.5rem;
+  }
+  .visit-block p, .visit-block a.plain{font-size:1.05rem;color:var(--ink-text);}
+  .hours-table{margin-top:.3rem;border-collapse:collapse;width:100%;max-width:320px;}
+  .hours-table tr{border-bottom:1px solid var(--parchment-dim);}
+  .hours-table td{padding:.55rem 0;font-size:.98rem;}
+  .hours-table td:last-child{text-align:right;color:var(--ink-text);}
+  .visit .btn-row{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+  .visit .btn-dark{
+    border:1px solid var(--ink);color:var(--ink);
+  }
+  .visit .btn-dark::before{background:var(--ink);}
+  .visit .btn-dark:hover{color:var(--parchment);}
+  .visit .btn-directions{border:1px solid var(--pomegranate);color:var(--pomegranate);}
+  .visit .btn-directions::before{background:var(--pomegranate);}
+  .visit .btn-directions:hover{color:var(--parchment);}
+
+  .map-frame{
+    border:1px solid var(--brass);
+    aspect-ratio:4/3.4;
+    overflow:hidden;
+  }
+  .map-frame iframe{width:100%;height:100%;border:0;filter:saturate(.85) contrast(1.02);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--parchment-dim);padding:3.5rem var(--edge) 2.2rem;}
+  .footer-inner{
+    max-width:1180px;margin:0 auto;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;
+    padding-bottom:2rem;border-bottom:1px solid rgba(243,234,217,.12);
+  }
+  .footer-brand{font-family:var(--font-display);font-size:1.2rem;color:var(--parchment);}
+  .footer-brand span{color:var(--brass);}
+  .footer-addr{margin-top:.8rem;font-size:.92rem;line-height:1.8;}
+  .footer-links{display:flex;gap:2.5rem;flex-wrap:wrap;}
+  .footer-links div h5{font-size:.78rem;letter-spacing:.03em;color:var(--brass);margin-bottom:.8rem;font-weight:500;}
+  .footer-links a{display:block;font-size:.92rem;margin-bottom:.55rem;color:var(--parchment-dim);}
+  .footer-links a:hover{color:var(--parchment);}
+  .footer-bottom{
+    max-width:1180px;margin:1.4rem auto 0;font-size:.8rem;opacity:.6;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  }
+
+  /* ---------- MOBILE STICKY CALL BAR ---------- */
+  .call-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:90;
+    background:var(--pomegranate);color:var(--parchment);
+    padding:.85rem var(--edge);
+    align-items:center;justify-content:center;gap:.6rem;
+    font-size:.95rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:920px){
+    .heritage-grid,.visit-grid{grid-template-columns:1fr;}
+    .heritage-art{order:-1;max-width:220px;margin:0 auto 1rem;}
+    .menu-columns{grid-template-columns:1fr;gap:0;}
+    .signature{grid-template-columns:1fr;}
+    .signature h3{grid-column:1;grid-row:auto;}
+    .signature .price{grid-column:1;grid-row:auto;justify-self:start;}
+    .signature p{grid-column:1;grid-row:auto;}
+  }
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed;inset:0 0 0 30%;background:var(--ink);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      gap:1.6rem;padding:2rem;
+      transform:translateX(100%);transition:transform .4s ease;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:1.15rem;}
+    .nav-toggle{display:flex;}
+    .call-bar{display:flex;}
+    body{padding-bottom:3.2rem;}
+    .footer-inner{flex-direction:column;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition-duration:.01ms!important;animation-duration:.01ms!important;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" id="siteNav">
+  <a href="#" class="brand">Afghan <span>Imperial</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#heritage">Heritage</a></li>
+    <li><a href="#visit">Visit us</a></li>
+    <li><a class="nav-cta" href="tel:+447498603264">Call now</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main">
+
+  <section class="hero">
+    <svg class="hero-arch" id="heroArch" viewBox="0 0 440 460" role="img" aria-label="Illustration of an arched doorway">
+      <path class="draw" d="M40,440 L40,235 Q40,88 220,48 Q400,88 400,235 L400,440" />
+      <path class="draw" d="M72,440 L72,232 Q72,124 220,88 Q368,124 368,232 L368,440" />
+      <line class="draw" x1="14" y1="452" x2="426" y2="452" />
+      <line class="draw" x1="220" y1="48" x2="220" y2="14" />
+      <line class="draw" x1="196" y1="24" x2="244" y2="24" transform="rotate(-40 220 24)" />
+      <line class="draw" x1="196" y1="24" x2="244" y2="24" transform="rotate(40 220 24)" />
+      <rect class="ornament" x="211" y="1" width="18" height="18"></rect>
+    </svg>
+
+    <div class="hero-content" id="heroContent">
+      <p class="hero-eyebrow-loc">Alum Rock Road, Birmingham</p>
+      <h1>Afghan Imperial</h1>
+      <p class="hero-tagline">Recipes carried from Kabul, cooked slowly and served with the hospitality of an Afghan table.</p>
+      <div class="hero-ctas">
+        <a href="tel:+447498603264" class="btn btn-primary">Reserve a table</a>
+        <a href="#menu" class="btn btn-outline">View the menu</a>
+      </div>
+      <p class="hero-foot">203 Alum Rock Road, Birmingham</p>
+    </div>
+  </section>
+
+  <section class="heritage" id="heritage">
+    <div class="section-inner heritage-grid">
+      <div>
+        <span class="kicker-line"></span>
+        <h2>A kitchen with old roots</h2>
+        <p>Afghan Imperial brings the cooking of Kabul, Herat and Mazar-i-Sharif to Alum Rock Road — rice perfumed with cardamom and orange peel, bread pulled straight from the tandoor, and stews built slowly over the course of a day, the way our grandmothers built them.</p>
+        <p>Afghanistan sat at the crossing point of the old Silk Road, and the kitchen still carries that history: saffron and dried fruit from Persia, dumplings that share a family with Central Asia's manti, warmth from the spice routes of the subcontinent. Everything here is cooked to order, unhurried.</p>
+        <div class="heritage-facts">
+          <div>Family-run kitchen</div>
+          <div>Halal</div>
+          <div>Dine in &amp; takeaway</div>
+        </div>
+      </div>
+      <div class="heritage-art">
+        <svg viewBox="0 0 300 340" role="img" aria-label="Geometric arch illustration">
+          <path d="M30,320 L30,170 Q30,60 150,30 Q270,60 270,170 L270,320" />
+          <path d="M60,320 L60,168 Q60,92 150,62 Q240,92 240,168 L240,320" />
+          <line x1="10" y1="330" x2="290" y2="330" />
+          <rect class="diamond" x="141" y="12" width="16" height="16" transform="rotate(45 149 20)"></rect>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu juniper" id="menu">
+    <div class="section-inner">
+      <div class="menu-head">
+        <span class="kicker-line"></span>
+        <h2>The menu</h2>
+        <p>A working menu of the dishes we're known for. Every plate is cooked fresh once you order it, so a little patience is always rewarded.</p>
+      </div>
+
+      <div class="signature">
+        <span class="signature-label">The house dish</span>
+        <h3>Kabuli Palaw</h3>
+        <span class="price">£14.95</span>
+        <p>Basmati rice slow-baked with tender lamb shank, caramelised carrot and sultanas, finished with toasted almond and pistachio. The dish Kabul is named for, and the one regulars order first.</p>
+      </div>
+
+      <div class="menu-columns">
+        <div>
+          <div class="menu-group">
+            <h3>Small plates</h3>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Bolani</span><span class="dish-leader"></span><span class="dish-price">£5.50</span></div>
+              <p class="dish-desc">Pan-fried flatbread filled with spiced potato and spring onion, garlic-mint yoghurt.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Ashak</span><span class="dish-leader"></span><span class="dish-price">£6.25</span></div>
+              <p class="dish-desc">Steamed leek dumplings, seasoned mince sauce, garlic yoghurt and dried mint.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Sambosa Ghosht (2pc)</span><span class="dish-leader"></span><span class="dish-price">£5.25</span></div>
+              <p class="dish-desc">Crisp pastry parcels filled with spiced minced lamb and green peas.</p>
+            </div>
+          </div>
+
+          <div class="menu-group">
+            <h3>Breads &amp; rice</h3>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Afghan naan</span><span class="dish-leader"></span><span class="dish-price">£2.50</span></div>
+              <p class="dish-desc">Baked to order in the tandoor.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Chalow</span><span class="dish-leader"></span><span class="dish-price">£3.50</span></div>
+              <p class="dish-desc">Steamed basmati rice.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Salata-e-Afghani</span><span class="dish-leader"></span><span class="dish-price">£3.95</span></div>
+              <p class="dish-desc">Tomato, cucumber, coriander, lemon.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="menu-group">
+            <h3>Mains</h3>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Chapli Kabab</span><span class="dish-leader"></span><span class="dish-price">£12.95</span></div>
+              <p class="dish-desc">Flattened beef and herb patties, pan-seared Peshawar-style, tomato-coriander salad.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Qorma Sabzi</span><span class="dish-leader"></span><span class="dish-price">£11.95</span></div>
+              <p class="dish-desc">Slow-cooked spinach and herb stew with tender lamb, served with chalow.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Mantu</span><span class="dish-leader"></span><span class="dish-price">£11.50</span></div>
+              <p class="dish-desc">Steamed beef and onion dumplings, split-pea sauce, mint yoghurt.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Tikka Kabab</span><span class="dish-leader"></span><span class="dish-price">£13.50</span></div>
+              <p class="dish-desc">Chicken or lamb, marinated overnight, chargrilled and served with naan.</p>
+            </div>
+          </div>
+
+          <div class="menu-group">
+            <h3>Sweets &amp; drinks</h3>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Firni</span><span class="dish-leader"></span><span class="dish-price">£4.50</span></div>
+              <p class="dish-desc">Rosewater and cardamom milk pudding, crushed pistachio.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Kahwa</span><span class="dish-leader"></span><span class="dish-price">£2.75</span></div>
+              <p class="dish-desc">Afghan green tea with cardamom and cinnamon.</p>
+            </div>
+            <div class="dish">
+              <div class="dish-row"><span class="dish-name">Doogh</span><span class="dish-leader"></span><span class="dish-price">£3.25</span></div>
+              <p class="dish-desc">Chilled yoghurt and mint.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu-note">Prices and dishes shown are a starting point — swap in your real menu and prices whenever you're ready.</p>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="section-inner visit-grid">
+      <div>
+        <span class="kicker-line"></span>
+        <h2>Visit us</h2>
+
+        <div class="visit-block">
+          <h4>Address</h4>
+          <p>203 Alum Rock Road<br>Alum Rock, Birmingham<br>B8 1EU, United Kingdom</p>
+        </div>
+
+        <div class="visit-block">
+          <h4>Phone</h4>
+          <a class="plain" href="tel:+447498603264">+44 7498 603264</a>
+        </div>
+
+        <div class="visit-block">
+          <h4>Hours</h4>
+          <table class="hours-table">
+            <tr><td>Monday – Thursday</td><td>12:00 – 22:30</td></tr>
+            <tr><td>Friday – Saturday</td><td>12:00 – 23:30</td></tr>
+            <tr><td>Sunday</td><td>13:00 – 22:00</td></tr>
+          </table>
+        </div>
+
+        <div class="btn-row">
+          <a href="tel:+447498603264" class="btn btn-dark">Call to book</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=203+Alum+Rock+Rd%2C+Alum+Rock%2C+Birmingham+B8+1EU%2C+United+Kingdom" target="_blank" rel="noopener" class="btn btn-directions">Get directions</a>
+        </div>
+      </div>
+
+      <div class="map-frame">
+        <iframe
+          src="https://maps.google.com/maps?q=203%20Alum%20Rock%20Rd%2C%20Alum%20Rock%2C%20Birmingham%20B8%201EU%2C%20United%20Kingdom&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Afghan Imperial Restaurant on Alum Rock Road, Birmingham">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Afghan <span>Imperial</span></p>
+      <p class="footer-addr">203 Alum Rock Road, Alum Rock<br>Birmingham, B8 1EU<br>+44 7498 603264</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h5>Explore</h5>
+        <a href="#menu">Menu</a>
+        <a href="#heritage">Heritage</a>
+        <a href="#visit">Visit us</a>
+      </div>
+      <div>
+        <h5>Reach us</h5>
+        <a href="tel:+447498603264">Call</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=203+Alum+Rock+Rd%2C+Alum+Rock%2C+Birmingham+B8+1EU%2C+United+Kingdom" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Afghan Imperial Restaurant</span>
+    <span>Alum Rock, Birmingham</span>
+  </div>
+</footer>
+
+<div class="call-bar">
+  <span>Reserve by phone —</span>
+  <a href="tel:+447498603264" style="text-decoration:underline;font-weight:500;">+44 7498 603264</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Nav scroll state
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Hero arch draw-in sequence (single orchestrated moment)
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const archLines = document.querySelectorAll('#heroArch .draw');
+  const ornament = document.querySelector('#heroArch .ornament');
+  const heroContent = document.getElementById('heroContent');
+
+  if (reduceMotion) {
+    ornament.classList.add('show');
+    heroContent.classList.add('show');
+  } else {
+    archLines.forEach((el, i) => {
+      const len = el.getTotalLength ? el.getTotalLength() : 400;
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      requestAnimationFrame(() => {
+        el.style.transition = `stroke-dashoffset 1.1s cubic-bezier(.65,0,.35,1) ${i * 140}ms`;
+        el.style.strokeDashoffset = 0;
+      });
+    });
+    setTimeout(() => ornament.classList.add('show'), archLines.length * 140 + 500);
+    setTimeout(() => heroContent.classList.add('show'), 350);
+  }
+</script>
+
+</body>
+</html>
